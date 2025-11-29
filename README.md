@@ -16,4 +16,4 @@ This repository contains companion materials for the YouTube series "Google Clou
 **Contributing**: Pull requests welcome. See `CONTRIBUTING.md` for guidelines.
 
 
-**Playlist**: [Link to your YouTube playlist]
+**Playlist**: https://www.youtube.com/playlist?list=PLaGQ5K8oDWBlgsDpviW2aYCzoHzyvLLeD
