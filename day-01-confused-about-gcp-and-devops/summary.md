@@ -1,4 +1,4 @@
-# Day 1 — Summary (Presenter Notes)
+# Day 1 — Summary
 
 ## 🎯 Topic: Confused About GCP & DevOps?
 
