@@ -1,73 +1,79 @@
-# 🌩️ Day 8 — Google Cloud Storage (GCS) — Overview Sheet  
+# 🌩️ Day 8 — Cloud Storage (GCS) Overview
 
-
----
-
-## ⭐ What is Cloud Storage?
-- Google’s **object storage** system  
-- Stores logs, backups, artifacts, images, datasets  
-- Highly durable (11 nines)
+This file is designed for LIVE explanation — short, visual, crisp.
 
 ---
 
-## ⭐ Bucket Basics
-- Bucket = Container for your objects  
-- Name must be **globally unique**  
-- Bucket name **cannot be renamed**  
-- Choose **Region / Dual-Region / Multi-Region**  
+# ⭐ 1. What is Google Cloud Storage?
+- Object storage for files, logs, backups, artifacts  
+- Durable (11 nines), scalable, secure  
 
 ---
 
-## ⭐ Bucket Location Types
-- **Region:** Mumbai — local apps  
-- **Dual-Region:** Mumbai + Delhi — high availability  
-- **Multi-Region:** Asia — global distribution  
+# ⭐ 2. Object vs Block vs File Storage  
+👉 Place your diagram here  
+- **Object (GCS):** Best for logs, backups, media  
+- **Block (PD):** VM-attached disk  
+- **File (Filestore):** Shared NFS filesystem  
 
 ---
 
-## ⭐ Important Bucket Settings
-- **Versioning:** recover deleted/overwritten objects  
-- **Public Access Prevention:** avoid accidental exposure  
-- **Encryption:** Google-managed / CMEK  
-- **UBLA:** IAM-only access (recommended)  
-- **Fine-grained:** Object-level ACL (legacy)
+# ⭐ 3. Buckets Explained  
+### Bucket Basics  
+- Container for your objects  
+- Globally unique name  
+- Cannot be renamed  
+
+### Bucket Locations  
+- **Region** → low latency  
+- **Dual-Region** → reliability  
+- **Multi-Region** → global delivery  
+
+### Important Settings  
+- Versioning  
+- Public access prevention  
+- Encryption (Google/CMEK)
 
 ---
 
-## ⭐ Storage Classes
-- **Standard** → Frequent access  
-- **Nearline** → Monthly access  
-- **Coldline** → Quarterly access  
-- **Archive** → Long-term storage  
+# ⭐ 4. Storage Classes  
+- **Standard** → frequent use  
+- **Nearline** → monthly  
+- **Coldline** → quarterly  
+- **Archive** → long-term, lowest cost  
 
 ---
 
-## ⭐ Object vs File vs Block Storage
-- **Object (GCS):** Backups, logs, artifacts  
-- **File (Filestore):** POSIX shared filesystem  
-- **Block (Persistent Disk):** VM disks  
+# ⭐ 5. Bucket Location Types  
+- Regional  
+- Dual-Region  
+- Multi-Region  
 
 ---
 
-## ⭐ Lifecycle Rules
-- Move to cheaper storage automatically  
-- Delete old files  
-- Delete old versions  
+# ⭐ 6. Access Control Models  
+### Uniform Bucket Level Access (UBLA)
+- IAM-based, modern, secure  
+
+### Fine-Grained  
+- Object ACL, legacy use only  
 
 ---
 
-## ⭐ DevOps Use Cases
-- Store CI/CD artifacts  
-- Backup & logs  
-- Terraform state  
-- Host static websites  
+# ⭐ 7. Lifecycle Management  
+- Move old objects to cheaper classes  
+- Delete old objects  
+- Clean versions  
 
 ---
 
-## ⭐ Demo (High Level)
+# ⭐ 8. IAM Roles  
+- Viewer / Creator / Admin roles for objects & buckets  
+
+---
+
+# ⭐ 9. Demo (High-Level)  
 - Create bucket  
 - Create service account  
 - Create VM with SA  
-- Read/write bucket objects  
-
----
+- Read/write objects  
