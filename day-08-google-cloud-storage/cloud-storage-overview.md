@@ -43,7 +43,6 @@
 ---
 
 ## ⭐ Object vs File vs Block Storage
-👉 Insert diagram here  
 - **Object (GCS):** Backups, logs, artifacts  
 - **File (Filestore):** POSIX shared filesystem  
 - **Block (Persistent Disk):** VM disks  
