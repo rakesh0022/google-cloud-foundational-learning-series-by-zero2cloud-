@@ -11,7 +11,6 @@ A highly durable **object storage service** for storing files, backups, logs, an
 ---
 
 ## ⭐ Object vs File vs Block Storage  
-👉 (Insert your diagram here)
 
 - **Object Storage (GCS)** → Ideal for backups, logs, artifacts  
 - **File Storage (Filestore)** → Shared POSIX file system  
