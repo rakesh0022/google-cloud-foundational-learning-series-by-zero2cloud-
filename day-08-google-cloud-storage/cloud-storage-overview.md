@@ -1,5 +1,5 @@
 # 🌩️ Day 8 — Google Cloud Storage (GCS) — Overview Sheet  
-*(Use this while explaining in your video)*
+
 
 ---
 
