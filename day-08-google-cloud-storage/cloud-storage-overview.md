@@ -1,7 +1,5 @@
 # 🌩️ Day 8 — Cloud Storage (GCS) Overview
 
-This file is designed for LIVE explanation — short, visual, crisp.
-
 ---
 
 # ⭐ 1. What is Google Cloud Storage?
@@ -11,7 +9,7 @@ This file is designed for LIVE explanation — short, visual, crisp.
 ---
 
 # ⭐ 2. Object vs Block vs File Storage  
-👉 Place your diagram here  
+
 - **Object (GCS):** Best for logs, backups, media  
 - **Block (PD):** VM-attached disk  
 - **File (Filestore):** Shared NFS filesystem  
