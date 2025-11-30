@@ -1,67 +1,74 @@
-# 🌩️ Day 8 — Google Cloud Storage (GCS) Overview
-
-This page is designed for LIVE EXPLANATION during the video.  
-Short, crisp, simple to understand.
+# 🌩️ Day 8 — Google Cloud Storage (GCS) — Overview Sheet  
+*(Use this while explaining in your video)*
 
 ---
 
 ## ⭐ What is Cloud Storage?
-A highly durable **object storage service** for storing files, backups, logs, and artifacts.
+- Google’s **object storage** system  
+- Stores logs, backups, artifacts, images, datasets  
+- Highly durable (11 nines)
 
 ---
 
-## ⭐ Object vs File vs Block Storage  
+## ⭐ Bucket Basics
+- Bucket = Container for your objects  
+- Name must be **globally unique**  
+- Bucket name **cannot be renamed**  
+- Choose **Region / Dual-Region / Multi-Region**  
 
-- **Object Storage (GCS)** → Ideal for backups, logs, artifacts  
-- **File Storage (Filestore)** → Shared POSIX file system  
-- **Block Storage (Persistent Disk)** → VM attached disks  
+---
+
+## ⭐ Bucket Location Types
+- **Region:** Mumbai — local apps  
+- **Dual-Region:** Mumbai + Delhi — high availability  
+- **Multi-Region:** Asia — global distribution  
+
+---
+
+## ⭐ Important Bucket Settings
+- **Versioning:** recover deleted/overwritten objects  
+- **Public Access Prevention:** avoid accidental exposure  
+- **Encryption:** Google-managed / CMEK  
+- **UBLA:** IAM-only access (recommended)  
+- **Fine-grained:** Object-level ACL (legacy)
 
 ---
 
 ## ⭐ Storage Classes
 - **Standard** → Frequent access  
-- **Nearline** → Access once per month  
-- **Coldline** → Access once per quarter  
+- **Nearline** → Monthly access  
+- **Coldline** → Quarterly access  
 - **Archive** → Long-term storage  
 
 ---
 
-## ⭐ Bucket Locations
-- **Region** → Single location  
-- **Dual-Region** → Two regions, auto replication  
-- **Multi-Region** → Best performance globally  
+## ⭐ Object vs File vs Block Storage
+👉 Insert diagram here  
+- **Object (GCS):** Backups, logs, artifacts  
+- **File (Filestore):** POSIX shared filesystem  
+- **Block (Persistent Disk):** VM disks  
 
 ---
 
-## ⭐ Access Control
-### **Uniform Bucket Level Access (Recommended)**
-- Access controlled only by IAM  
-- Simple, secure, modern
-
-### **Fine-Grained Access**
-- Object-level ACLs  
-- Used only for legacy apps  
+## ⭐ Lifecycle Rules
+- Move to cheaper storage automatically  
+- Delete old files  
+- Delete old versions  
 
 ---
 
-## ⭐ Lifecycle Management
-Automate:
-- Move to cheaper class  
-- Delete old objects  
-- Clean up versions  
+## ⭐ DevOps Use Cases
+- Store CI/CD artifacts  
+- Backup & logs  
+- Terraform state  
+- Host static websites  
 
 ---
 
-## ⭐ Common DevOps Use Cases
-- CI/CD artifacts  
-- App logs & images  
-- Backup storage  
-- Hosting static websites  
-
----
-
-## ⭐ Demo Steps (High-level)
+## ⭐ Demo (High Level)
 - Create bucket  
 - Create service account  
-- Launch VM with SA  
-- Access bucket from VM  
+- Create VM with SA  
+- Read/write bucket objects  
+
+---
