@@ -46,3 +46,33 @@ This demo shows how to connect a Compute Engine VM with Google Cloud Storage usi
 SSH into VM and run:
 
 ### List objects
+gcloud storage ls gs://<bucket-name>
+
+
+### Download file
+
+
+gcloud storage cp gs://<bucket-name>/hello.txt hello.txt
+
+
+### Upload file
+
+
+echo "Uploaded from VM" > vm-file.txt
+gcloud storage cp vm-file.txt gs://<bucket-name>/vm-file.txt
+
+
+Check the bucket via console to confirm the new file.
+
+---
+
+# 🧹 Step 5 — Cleanup
+- Delete **VM**  
+- Delete **Bucket**  
+- Delete **Service Account**  
+- (Optional) Delete the project  
+
+---
+
+# 🎉 Demo Completed!
+Your VM is now able to access Cloud Storage securely using IAM & service accounts — no keys needed.  
