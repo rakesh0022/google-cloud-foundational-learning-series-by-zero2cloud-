@@ -1,45 +1,48 @@
-# 🧪 Day 8 Demo — Working with Google Cloud Storage (GCS)
+# 🧪 Day 8 Demo — VM + Cloud Storage (UI Only)
 
-This demo connects a Compute Engine VM with a GCS bucket using IAM service accounts.
-
----
-
-# 🔹 Step 1 — Create a GCS Bucket (Console)
-1. Go to **Cloud Storage → Buckets**  
-2. Click **Create bucket**  
-3. Choose a unique name  
-4. Location: `asia-south1` (or your region)  
-5. Storage Class: **Standard**  
-6. Access Control: **Uniform**  
-7. Click **Create**
+This demo shows how to connect a Compute Engine VM with Google Cloud Storage using IAM-based access.
 
 ---
 
-# 🔹 Step 2 — Create a Service Account
-1. IAM & Admin → Service Accounts  
-2. Click **Create Service Account**  
-3. Name: `gcs-demo-sa`  
-4. Grant Role → **Storage Object Admin**  
-5. Create  
+# 🔑 Objectives
+- Create a bucket  
+- Create service account  
+- Launch VM with SA  
+- Access GCS from inside VM  
+- Cleanup  
 
 ---
 
-# 🔹 Step 3 — Create a VM with Attached Service Account
+# 📝 Step 1 — Create a Cloud Storage Bucket
+1. Go to **Cloud Storage → Buckets → Create**  
+2. Enter unique bucket name  
+3. Choose **Region** (same as VM for low latency)  
+4. Keep **Storage Class: Standard**  
+5. Access control → **Uniform**  
+6. Click **Create**
+
+---
+
+# 📝 Step 2 — Create a Service Account
+1. Go to **IAM & Admin → Service Accounts → Create**  
+2. Name: `gcs-demo-sa`  
+3. Assign role:  
+   - **Storage Object Admin**  
+4. Click Create → Done  
+
+---
+
+# 📝 Step 3 — Launch the Compute VM
 1. Compute Engine → VM Instances → Create  
-2. Name: `gcs-demo-vm`  
-3. Region: Same as bucket  
-4. Machine Type: `e2-micro`  
-5. Identity → Service Account → `gcs-demo-sa`  
-6. API Access → **Allow full access**  
-7. Create  
+2. VM name: `gcs-demo-vm`  
+3. Machine: `e2-micro`  
+4. Identity → Service Account → select `gcs-demo-sa`  
+5. Access scope → “Allow full access to Cloud APIs”  
+6. Create  
 
 ---
 
-# 🔹 Step 4 — Upload a File to Bucket
-- Upload `hello.txt` to bucket
+# 📝 Step 4 — Interact with the Bucket from VM
+SSH into VM and run:
 
----
-
-# 🔹 Step 5 — Connect to VM and Run Commands
-
-### List bucket contents
+### List objects
